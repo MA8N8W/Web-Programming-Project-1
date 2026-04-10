@@ -307,7 +307,11 @@ form div button:hover {
         color: var(--colour-light);
         white-space: nowrap;
     }
-    .navigation li:not(.menuButton) a:hover, .navigation a.active {
+    .navigation li:not(.menuButton):not(.active) a:hover {
+        transform: translateY(100%);
+    }
+
+    .navigation li.active {
         transform: translateY(100%);
     }
 }
