@@ -1,14 +1,17 @@
 <?php
-$ablakcim = array(
-    'cim' => 'Rubbish',
+$windowtitle = array(
+    'title' => 'Radio',
 );
 
+//Deprecated
+/*
 $header = array(
     'imgsrc' => 'logo.svg',
     'imgalt' => 'logo',
 	'cim' => 'Rubbish',
 	'motto' => 'lkjd asldj sapi sd'
 );
+*/
 
 $footer = array(
     'copyright' => 'Copyright '.date("Y").'.',
@@ -23,7 +26,7 @@ $pages = array(
 	'messages' => array('file' => 'messages', 'szoveg' => 'Messages', 'menun' => array(1,1)),
     'tablazat' => array('file' => 'tablazat', 'szoveg' => 'Database', 'menun' => array(1,1)),
     'login' => array('file' => 'login', 'szoveg' => 'Log In', 'menun' => array(1,0)),
-    'kilepes' => array('file' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
+    'kilepes' => array('file' => 'kilepes', 'szoveg' => 'Log Out', 'menun' => array(0,1)),
     'belep' => array('file' => 'belep', 'szoveg' => '', 'menun' => array(0,0)),
     'regisztral' => array('file' => 'regisztral', 'szoveg' => '', 'menun' => array(0,0)),
     'register' => array('file' => 'register', 'szoveg' => 'Register', 'menun' => array(0,0))

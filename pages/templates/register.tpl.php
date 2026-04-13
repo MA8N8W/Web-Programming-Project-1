@@ -1,4 +1,7 @@
-<main id="main-content" tabindex="-1">
+<?php
+if(file_exists("./pages/common/altheader.php")) { include("./pages/common/altheader.php"); }
+?>
+<main id="main-content" tabindex="-1" class="wrapper">
     <article class="accountprompt">
         <h3>Register an account</h3>
         <form action="../../index.php" method="post">
@@ -23,7 +26,8 @@
                     <legend>Repeat Password*</legend>
                     <input type="password" id="passwordcheck" name="passwordcheck" required>
                 </fieldset>
-                <input type="checkbox">
+                <input type="checkbox" id="tos" name="tos">
+                <label for="tos">I have read and accept the Terms Of Service</label>
                 <br>
                 <button type="submit">Sign Up</button>
             </div>
@@ -36,3 +40,6 @@
         </p>
     </article>
 </main>
+<script>
+    <?php if(file_exists("./pages/common/validationscript.php")) { include("./pages/common/validationscript.php"); }?>
+</script>

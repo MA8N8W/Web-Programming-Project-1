@@ -55,6 +55,31 @@ article {
     font-size: 1.25rem;
 }
 
+figure {
+    display: table;
+    float: right;
+    clear: right;
+    border: solid 1px var(--colour-dark);
+    border-radius: 7px;
+    background: var(--colour-dark);
+    padding: 0;
+    margin: 0 0 0 10px;
+}
+
+figure img {
+    height: auto;
+    width: 250px;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+figure figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--colour-light);
+    padding: 8px 0;
+}
+
 .accountprompt {
     max-width: 60ch;
     margin-left: auto;
@@ -122,6 +147,10 @@ form div input[type="checkbox"] {
     margin: 6px 0 10px 0;
 }
 
+form div label {
+    font-size: 0.8rem;
+}
+
 form div button {
     width: 100%;
     background: var(--colour-primary);
@@ -142,6 +171,7 @@ form div button:hover {
     margin-right: auto;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+    justify-content: center;
 }
 
 .site-head {

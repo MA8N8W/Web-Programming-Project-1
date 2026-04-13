@@ -1,0 +1,32 @@
+<header class="site-head" role="banner">
+    <div class="wrapper">
+        <div class="site-head-inner">
+            <a href="./index.php" class="site-head-brand">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 67.73 67.73">
+                        <g fill="currentColor">
+                            <circle cx="-33.87" cy="-12.7" r="6.35"/>
+                            <circle cx="-42.86" cy="-3.7" r="3.7"/>
+                            <circle cx="-49.21" cy="2.65" r="2.65"/>
+                            <circle cx="24.87" cy="21.7" r="3.7" transform="scale(-1)"/>
+                            <circle cx="18.52" cy="28.05" r="2.65" transform="scale(-1)"/>
+                        </g>
+                        <g fill="var(--colour-light)">
+                            <path d="M67.73 33.87c-18.7 0-38.92 15.16-45.15 33.86h7.05c4.94-14.8 23.3-28.22 38.1-28.22zM38.1 0C33.16 14.8 14.8 28.22 0 28.22v5.65C18.7 33.87 38.92 18.7 45.15 0z"/>
+                            <g transform="rotate(8.7 113.62 -34.6)scale(1.333)">
+                                <circle cx="33.87" cy="33.87" r="6.35"/>
+                                <circle cx="24.87" cy="42.86" r="3.7"/>
+                                <circle cx="18.52" cy="49.21" r="2.65"/>
+                                <circle cx="-42.86" cy="-24.87" r="3.7" transform="scale(-1)"/>
+                                <circle cx="-49.21" cy="-18.52" r="2.65" transform="scale(-1)"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+            <div>
+            <?php if(isset($_SESSION['login'])) { ?>Logged in: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
+            </div>
+        </div>
+    </div>
+</header>
