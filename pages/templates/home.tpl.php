@@ -1,6 +1,6 @@
 <?php
     if(file_exists("./pages/common/header.php")) { include("./pages/common/header.php"); }
-    if(file_exists("./pages/common/header.php")) { include("./pages/common/navigation.php"); }
+    if(file_exists("./pages/common/navigation.php")) { include("./pages/common/navigation.php"); }
 ?>
 <main id="main-content" tabindex="-1" class="wrapper">
     <article>

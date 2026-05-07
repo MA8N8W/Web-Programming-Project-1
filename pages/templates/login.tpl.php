@@ -4,8 +4,8 @@ if(file_exists("./pages/common/altheader.php")) { include("./pages/common/althea
 <main id="main-content" tabindex="-1" class="wrapper">
         <article class="accountprompt">
             <h3>Log in to your account</h3>
-            <form action="belep" method="post">
-                <div class="login">
+            <form action="account_sign_in" method="post">
+                <div class="form">
                     <fieldset>
                         <legend>Username</legend>
                         <input type="text" id="username" name="username" required>
@@ -14,6 +14,7 @@ if(file_exists("./pages/common/altheader.php")) { include("./pages/common/althea
                         <legend>Password</legend>
                         <input type="password" id="password" name="password" required>
                     </fieldset>
+                    <br/>
                     <button type="submit">Sign In</button>
                 </div>
             </form>

@@ -46,5 +46,5 @@ if(file_exists("./pages/common/header.php")) { include("./pages/common/navigatio
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(elementid).style.display = "block";
         evt.currentTarget.className += " active";
-}
+    }
 </script>

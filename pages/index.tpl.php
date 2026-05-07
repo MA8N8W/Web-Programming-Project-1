@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php if(file_exists('./logicals/'.$keres['file'].'.php')) { include("./logicals/{$keres['file']}.php"); } ?>
+<?php if(file_exists('./logic/'.$keres['file'].'.php')) { include("./logic/{$keres['file']}.php"); } ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

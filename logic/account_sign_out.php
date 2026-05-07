@@ -1,0 +1,11 @@
+<?php
+unset($_SESSION['id']);
+unset($_SESSION['admin']);
+unset($_SESSION['userName']);
+unset($_SESSION['email']);
+unset($_SESSION['firstName']);
+unset($_SESSION['middleName']);
+unset($_SESSION['lastName']);
+unset($_SESSION['birthDate']);
+unset($_SESSION['joinDate']);
+?>

@@ -8,6 +8,7 @@
     --colour-secondary-shade: black;
     --menu-padding: 0.3em 0;
     --menu-toggle-width: 50rem;
+    --border-radius: 5px;
 }
 
 body {
@@ -23,13 +24,14 @@ body {
 
 main {
     flex: 1;
+    padding: 0 0 20px 0;
 }
 
 h1, h2 {
     font-family: 'Halant', Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     line-height: 1.1;
-    max-width: 30ch;
+    /*max-width: 30ch;*/
 }
 
 h1 {
@@ -41,7 +43,7 @@ h2 {
 }
 
 p {
-    max-width: 70ch;
+    /*max-width: 70ch;*/
     margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -87,8 +89,28 @@ figure figcaption {
     text-align: center;
 }
 
+.prompt {
+    border: solid 1px var(--colour-dark);
+    border-radius: var(--border-radius);
+}
+
+.promptlegend legend {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    color: var(--colour-dark);
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+}
+
 form {
-    text-align: left;
+    text-align: center;
 }
 
 form div {
@@ -99,16 +121,33 @@ form div {
 
 form div fieldset {
     border: solid 1px var(--colour-dark);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 0;
+    margin: 0;
 }
 
-form div.login  fieldset {
-    margin: 0px 0px 25px 0px;
+form .singleline {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
 }
 
-form div.register fieldset {
-    margin: 0px 0px 10px 0px;
+form div.singleline fieldset {
+    width: calc(50% - 5px);
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+form div.singleline div.spacer {
+    width: 10px;
+    height: 1ch;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 form div fieldset legend {
@@ -117,19 +156,21 @@ form div fieldset legend {
     font-size: 0.95rem;
     background: white;
     color: var(--colour-dark);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 form div fieldset:has(input:focus) legend {
     color: var(--colour-primary-shade);
 }
 
-form div fieldset input[type="text"], input[type="email"], input[type="password"] {
+form div fieldset input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="password"] {
     width: calc(100% - 16px);
     padding: 0 6px 5px 6px;
     margin: 0 8px 8px 8px;
     background: none;
     border: none;
-    border-radius: 3px;
+    border-radius: calc(0.6 * var(--border-radius));
     outline: none;
 }
 
@@ -155,7 +196,7 @@ form div button {
     width: 100%;
     background: var(--colour-primary);
     border: solid 1px var(--colour-primary);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     color: var(--colour-light);
     padding: 8px;
 }
@@ -166,6 +207,7 @@ form div button:hover {
 }
 
 .wrapper {
+    width: 100%;
     max-width: 65rem;
     margin-left: auto;
     margin-right: auto;
@@ -189,6 +231,10 @@ form div button:hover {
     justify-content: space-between;
     align-items: center;
     gap: 0 1rem;
+}
+
+.site-head-inner p {
+    margin: 0.5ch;
 }
 
 .site-head-brand {
@@ -220,6 +266,7 @@ form div button:hover {
     box-sizing: border-box;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
+    text-align: center;
 }
 
 .navigation ul, li {
@@ -399,6 +446,11 @@ form div button:hover {
 
 .tabcontent a {
     text-align: center;
+}
+
+.video iframe, .video svg {
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
 }
 
 footer {

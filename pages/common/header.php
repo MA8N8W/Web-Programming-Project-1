@@ -25,7 +25,13 @@
                 </div>
             </a>
             <div>
-            <?php if(isset($_SESSION['login'])) { ?>Logged in: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
+            <?php if(isset($_SESSION['id'])) { ?>
+                <p style="font-size: 85%">Signed In:</p>
+                <p><strong><?= $_SESSION['userName'] ?></strong> (<?= $_SESSION['email'] ?>)</p>
+                <?php if(isset($_SESSION['firstName']) || isset($_SESSION['middleName']) || isset($_SESSION['lastName'])) { ?>
+                    <p><?= $_SESSION['firstName'] ? $_SESSION['firstName']." " : "" ?><?= $_SESSION['middleName'] ? $_SESSION['middleName']." " : "" ?><?= $_SESSION['lastName'] ?: "" ?></p>
+                <?php } ?>
+            <?php } ?>
             </div>
         </div>
     </div>

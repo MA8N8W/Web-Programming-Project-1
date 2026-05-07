@@ -2,10 +2,10 @@
     <div class="wrapper">
         <ul role="list">
             <?php foreach ($pages as $url => $page) { ?>
-                <?php if(! isset($_SESSION['login']) && $page['menun'][0] || isset($_SESSION['login']) && $page['menun'][1]) { ?>
+                <?php if(! isset($_SESSION['userName']) && $page['menun'][0] || isset($_SESSION['userName']) && $page['menun'][1]) { ?>
                     <li<?= (($page == $keres) ? ' class="active"' : '') ?>>
-                        <a href="<?= ($url == '/') ? '.' : $url ?>" data-hover="<?= $page['szoveg'] ?>">
-                            <?= $page['szoveg'] ?>
+                        <a href="<?= ($url == '/') ? '.' : $url ?>" data-hover="<?= $page['text'] ?>">
+                            <?= $page['text'] ?>
                         </a>
                     </li>
                 <?php } ?>
