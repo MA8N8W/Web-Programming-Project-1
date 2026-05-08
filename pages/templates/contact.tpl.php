@@ -1,50 +1,52 @@
 <?php
 if(file_exists("./pages/common/header.php")) { include("./pages/common/header.php"); }
-if(file_exists("./pages/common/header.php")) { include("./pages/common/navigation.php"); }
+if(file_exists("./pages/common/navigation.php")) { include("./pages/common/navigation.php"); }
 ?>
 <main id="main-content" tabindex="-1" class="wrapper">
-    <div class="test">
-        <h1>Location of The Datacentre</h1>
-        <p>The exact location of the Oracle Cloud Datacentre this website is hosted on is unknown. According to Oracle it's in Amsterdam, but no further information is provided. According to some sources Oracle uses Equinox's AM4 Datacentre.</p>
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'GM')">Google Maps</button>
-            <button class="tablinks" onclick="openTab(event, 'OSM')">Open Street Map</button>
-        </div>
-
-        <div id="GM" class="tabcontent">
-            <iframe width="600" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.2182336556654!2d4.961687905339374!3d52.354589809443794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6090049c2ddad%3A0xe91e9a3342584e0c!2sEquinix%20AM4!5e0!3m2!1sen!2shu!4v1774424190900!5m2!1sen!2shu" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <br/>
-            <small><a target="_blank" href="https://maps.app.goo.gl/ny3ukPopscQpaXiv7">Open Map Externally</a></small>
-        </div>
-
-        <div id="OSM" class="tabcontent">
-            <iframe width="425" height="450" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=4.960230588912965%2C52.35356517871814%2C4.961968660354615%2C52.3549658676064&amp;layer=mapnik" style="border: none"></iframe>
-            <br/>
-            <small><a target="_blank" href="https://www.openstreetmap.org/?#map=19/52.354266/4.961100&amp;layers=D">Open Map Externally</a></small>
-        </div>
-    </div>
+    <article>
+        <h3>Contact Us</h3>
+        <p>If you wish to leave a message for us, you can do so with the form below.</p>
+        <form id="messageForm" action="contact_form_submit" method="post">
+            <?php if(!isset($_SESSION['id'])) { ?>
+                <div class="informationmessage">
+                    <p>You're currently not signed in, submitted messages will be displayed as GUEST.</p>
+                    <p>You may optionally leave a name and email address.</p>
+                    <p>Click <a href="login"><i>here</i></a> if you wish to sign in.</p>
+                </div>
+            <?php } ?>
+            <div id="errormessage" class="errormessage">
+                <p>! If you can read this message, JavaScript may be disabled.</p>
+            </div>
+            <div>
+                <?php if(!isset($_SESSION['id'])) { ?>
+                    <div class="singleline">
+                        <fieldset id="namefieldset">
+                            <legend id="namelegend">Name<abbr title="If you decide to include a name, it must be at minimum 5 characters."><strong><sup>!</sup></strong></abbr></legend>
+                            <input type="text" id="name" name="name" size="20" maxlength="40">
+                        </fieldset>
+                        <div class="spacer"></div>
+                        <fieldset id="emailfieldset">
+                            <legend id="emaillegend">Email Address</legend>
+                            <input type="text" id="email" name="email" size="30" maxlength="40">
+                        </fieldset>
+                    </div>
+                <?php } ?>
+                <fieldset id="contentfieldset">
+                    <legend id="contentlegend">Message Content<abbr title="Required">*</abbr></legend>
+                    <textarea id="content" name="content" cols="40" rows="10"></textarea>
+                </fieldset>
+                <br/>
+                <button id="submit" type="submit" onclick="submitForm()">Submit</button>
+            </div>
+        </form>
+    </article>
 </main>
 <?php if(file_exists("./pages/common/footer.php")) { include("./pages/common/footer.php"); } ?>
 <script>
     <?php if(file_exists("./pages/common/navigationscript.php")) { include("./pages/common/navigationscript.php"); }?>
-    function openTab(evt, elementid) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
-
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(elementid).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
 </script>
+<?php if(!isset($_SESSION['id'])) { ?>
+    <script type="text/javascript" src="js/guest_contactform.js"></script>
+<?php } else { ?>
+    <script type="text/javascript" src="js/user_contactform.js"></script>
+<?php } ?>

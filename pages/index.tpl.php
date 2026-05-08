@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$windowtitle['title']?></title>
+    <title><?=$keres['text']?></title>
     <link rel="icon" type="image/svg+xml" href="./images/logo.svg" >
     <link rel="stylesheet" href="./styles/reset.css" type="text/css">
     <link rel="stylesheet" href="./styles/global.css" type="text/css">
