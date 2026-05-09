@@ -79,25 +79,28 @@ function saveUser(e) {
         transmitter_location:document.getElementById("transmitter_location").value,
         address:document.getElementById("address").value,
     };
-    //getData();
-    fetch(api, {
-        method: (data.id ? "PUT" : "POST"),
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data)
-    })
-        .then(res => res.json())
-        .then(data => {
-            //e.target.reset();
-            document.getElementById("message").innerText = data.status;
-            document.getElementById("id").value = "";
-            fetchUsers();
-        });
-    document.getElementById("id").value = "";
-    document.getElementById("frequency").value = "";
-    document.getElementById("performance").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("transmitter_location").value = "";
-    document.getElementById("address").value = "";
+    if (data.id == "" || data.frequency == "" || data.performance == "" || data.name == "" || data.transmitter_location == "" ) {
+        alert("All required field must be filled in!");
+    } else {
+        fetch(api, {
+            method: (data.id ? "PUT" : "POST"),
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                //e.target.reset();
+                document.getElementById("message").innerText = data.status;
+                document.getElementById("id").value = "";
+                fetchUsers();
+            });
+        document.getElementById("id").value = "";
+        document.getElementById("frequency").value = "";
+        document.getElementById("performance").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("transmitter_location").value = "";
+        document.getElementById("address").value = "";
+    }
 }
 
 function editUser(channel) {
