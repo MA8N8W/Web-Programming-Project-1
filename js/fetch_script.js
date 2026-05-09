@@ -79,7 +79,7 @@ function saveUser(e) {
         transmitter_location:document.getElementById("transmitter_location").value,
         address:document.getElementById("address").value,
     };
-    if (data.id == "" || data.frequency == "" || data.performance == "" || data.name == "" || data.transmitter_location == "" ) {
+    if (data.frequency == "" || data.performance == "" || data.name == "" || data.transmitter_location == "" ) {
         alert("All required field must be filled in!");
     } else {
         fetch(api, {

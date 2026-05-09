@@ -3,14 +3,15 @@ if(file_exists("./pages/common/header.php")) { include("./pages/common/header.ph
 if(file_exists("./pages/common/header.php")) { include("./pages/common/navigation.php"); }
 ?>
 <main id="main-content" tabindex="-1" class="wrapper">
-    <div class="test">
-        <h1>Example of an Embedded Video</h1>
+    <article style="text-align: center">
+        <h3>Example of an Embedded Video</h3>
             <div class="video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=wZYgDoR8yEOC_jfi&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        <h1>Example of a Hosted Video</h1>
+            <p>YouTube seems to have blocked this page from embedding videos, exact reason is unknown at this time.</p>
+        <h3>Example of a Hosted Video</h3>
         <p>WIP</p>
-        <h1>Bonus; Animated SVG</h1>
+        <h3>Bonus; Animated SVG</h3>
         <div class=video style="width: 560px; height: 315px">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 576">
                 <rect height="100%" width="100%" fill="#222" />
@@ -28,7 +29,7 @@ if(file_exists("./pages/common/header.php")) { include("./pages/common/navigatio
                 </svg>
             </svg>
         </div>
-    </div>
+    </article>
 </main>
 <?php if(file_exists("./pages/common/footer.php")) { include("./pages/common/footer.php"); } ?>
 <script>

@@ -13,25 +13,25 @@ if(file_exists("./pages/common/header.php")) { include("./pages/common/navigatio
                     <div class="singleline">
                         <div class="singleline" style="width: calc(calc(100% - 10px) / 2)">
                             <fieldset>
-                                <legend>Frequency*</legend>
-                                <input type="number" step="0.1" min="80" max="108" id="frequency"/>
+                                <legend>Frequency<abbr title="Values must be between 80 and 108">*</abbr></legend>
+                                <input type="number" step="0.1" min="80" max="108" id="frequency" required/>
                             </fieldset>
                             <fieldset class="spacer"></fieldset>
                             <fieldset>
-                                <legend>Performance*</legend>
-                                <input type="number" step="0.0001" min="0" id="performance"/>
+                                <legend>Performance<abbr title="Values must be positive">*</abbr></legend>
+                                <input type="number" step="0.0001" min="0" id="performance" required/>
                             </fieldset>
                         </div>
                         <fieldset class="spacer"></fieldset>
                         <fieldset>
-                            <legend>Name*</legend>
-                            <input type="text" id="name"/>
+                            <legend>Name<abbr title="Required">*</abbr></legend>
+                            <input type="text" id="name" required/>
                         </fieldset>
                     </div>
                     <div class="singleline">
                         <fieldset style="width: calc(40% - 5px)">
-                            <legend>Transmitter Location*</legend>
-                            <input type="text" id="transmitter_location"/>
+                            <legend>Transmitter Location<abbr title="Required">*</abbr></legend>
+                            <input type="text" id="transmitter_location" required/>
                         </fieldset>
                         <fieldset class="spacer"></fieldset>
                         <fieldset style="width: calc(60% - 5px)">
