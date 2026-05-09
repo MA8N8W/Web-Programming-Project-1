@@ -172,7 +172,7 @@ form div.singleline fieldset {
     margin: 0;
 }
 
-form div.singleline div.spacer {
+form div.singleline .spacer {
     width: 10px;
     height: 1ch;
     display: inline-block;

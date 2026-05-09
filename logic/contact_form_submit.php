@@ -9,13 +9,19 @@ require 'db.php';
         //User form
         if(isset($_POST['content'])) {
             if(trim($_POST['content']) != "") {
-                $mst = $pdo->prepare("INSERT INTO messages(user_id, message) VALUES(:id, :content)");
-                $mst->execute(
-                    array(
-                        ':id' => $_SESSION['id'],
-                        ':content' => trim($_POST['content']),
-                    )
-                );
+                $content = trim($_POST['content']);
+                try {
+                    $mst = $pdo->prepare("INSERT INTO messages(user_id, message) VALUES(:id, :content)");
+                    $mst->execute(
+                        array(
+                            ':id' => $_SESSION['id'],
+                            ':content' => $content,
+                        )
+                    );
+                }
+                catch (PDOException $e) {
+                    $submitmessage = $e->getMessage();
+                }
                 return;
             }
             else {

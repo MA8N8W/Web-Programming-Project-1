@@ -1,0 +1,96 @@
+table {
+    display: block;
+    background: var(--colour-dark);
+    border-collapse: collapse;
+    border: solid 1px var(--colour-dark);
+    border-radius: calc(var(--border-radius) + 2px);
+    padding: 1px;
+}
+
+thead, tbody {
+    display: block;
+    border: solid 1px var(--colour-dark);
+    background: var(--colour-light);
+}
+
+thead {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-bottom: none;
+}
+
+tbody {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 2px;
+}
+
+thead tr, tbody tr {
+    display:flex;
+    width:100%
+}
+
+tbody tr:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background: #fce1eb;
+}
+
+thead tr th, tbody tr td {
+    display: inline-block;
+    overflow: hidden;
+    text-wrap: wrap;
+}
+
+thead tr th:not(:first-child, .buttonfield), tbody tr td:not(:first-child, .buttonfield) {
+    padding: 0 5px;
+    margin: 0;
+}
+
+thead tr th.buttonfield, tbody tr td.buttonfield {
+    min-width: 150px;
+    width: 150px;
+    text-align: center;
+}
+
+table button {
+    width: calc(50% - 3px);
+    background: var(--colour-light);
+    border: solid 1px var(--colour-primary-shade);
+    border-radius: calc(var(--border-radius) - 2px);
+    color: var(--colour-primary-shade);
+    padding: 3px 0 3px 0;
+    margin: 0;
+}
+
+table button.deletebutton {
+    background: var(--colour-primary-shade);
+    color: var(--colour-light);
+}
+
+table button:not(.deletebutton):hover {
+    border: solid 1px var(--colour-primary);
+    color: var(--colour-primary);
+}
+
+table button.deletebutton:hover {
+    background: var(--colour-primary);
+    color: var(--colour-light);
+}
+
+table .buttonfield div {
+    width: 6px;
+    height: 1em;
+    display: inline-block;
+}
+
+table thead tr th:not(:first-child, .buttonfield), table tbody tr td:not(:first-child, .buttonfield) {
+    width: calc(calc(calc(100% - 150px) - 5ch) / 2);
+}
+
+table thead tr th:first-child, table tbody tr td:first-child {
+    min-width: 5ch;
+    width: 5ch;
+    text-align: right;
+    color: var(--colour-primary-shade);
+}
