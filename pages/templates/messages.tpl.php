@@ -15,7 +15,7 @@ if(file_exists("./pages/common/navigation.php")) { include("./pages/common/navig
                                 <td><strong>GUEST - <?= htmlspecialchars($row['guest_name'])?></strong></td>
                                 <td><?= htmlspecialchars($row['guest_email'])?></td>
                             <?php } else { ?>
-                                <td><strong><?= ($row['is_admin'] == 1) ? "ADMIN -" : "" ?><?= htmlspecialchars($row['user_name'])?></strong></td>
+                                <td><strong><?= ($row['is_admin'] == 1) ? "ADMIN - " : "" ?><?= htmlspecialchars($row['user_name'])?></strong></td>
                                 <td><?= htmlspecialchars($row['email_address'])?></td>
                             <?php } ?>
                             <td><?= date_format(new DateTime($row["post_timestamp"]),'Y/m/d H:i:s')?></td>

@@ -33,7 +33,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
                             ':firstname' => trim($_POST['firstname']),
                             ':middlename' => trim($_POST['middlename']),
                             ':lastname' => trim($_POST['lastname']),
-                            ':birthdate' => trim($_POST['birthdate'])
+                            ':birthdate' => ($_POST['birthdate'] != "") ? $_POST['birthdate'] : null
                         )
                     );
                     if($count = $stmt->rowCount()) {

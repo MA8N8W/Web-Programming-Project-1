@@ -38,7 +38,7 @@ require 'db.php';
         //Guest form
         if($_POST['content'] != "") {
             if ($_POST['name'] != "") {
-                if(mb_strlen(trim($_POST['name'])) > 5) {
+                if(mb_strlen(trim($_POST['name'])) >= 5) {
                     $name = trim($_POST['name']);
                 }
                 else {

@@ -332,7 +332,7 @@ form div button:hover {
     display: none;
 }
 
-@media screen and (max-width: 55rem) {
+@media screen and (max-width: 65rem) {
     /*.navigation a:not(first-child) {display: none;}*/
     .navigation .wrapper {
         margin: 0;
@@ -394,7 +394,7 @@ form div button:hover {
     }
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 65rem) {
     .navigation li:not(.menuButton) {
         display: inline-block;
         margin: 0 1.5em;

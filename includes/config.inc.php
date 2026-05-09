@@ -21,6 +21,7 @@ $footer = array(
 $pages = array(
 	'/' => array('file' => 'home', 'text' => 'Home', 'menun' => array(1,1)),
     'gallery' => array('file' => 'gallery', 'text' => 'Gallery', 'menun' => array(1,1)),
+    'feltolt' => array('file' => 'feltolt', 'text' => '', 'menun' => array(0,0)),
     'videos' => array('file' => 'videos', 'text' => 'Videos', 'menun' => array(1,1)),
     'database' => array('file' => 'database', 'text' => 'Database', 'menun' => array(1,1)),
     'about' => array('file' => 'about', 'text' => 'About', 'menun' => array(1,1)),
@@ -34,5 +35,5 @@ $pages = array(
     'account_sign_out' => array('file' => 'account_sign_out', 'text' => 'Sign Out', 'menun' => array(0,1))
 );
 
-$hiba_oldal = array ('fajl' => '404', 'text' => 'A keresett oldal nem található!');
+$hiba_oldal = array ('fajl' => '404', 'text' => 'Page Could Not Be Found!');
 ?>

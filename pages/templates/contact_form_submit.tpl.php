@@ -3,8 +3,12 @@ if(file_exists("./pages/common/altheader.php")) { include("./pages/common/althea
 ?>
 <main id="main-content" tabindex="-1" class="wrapper">
     <article>
-        <?php if(isset($submitmessage)) { echo $submitmessage; }
-        else { ?>
+        <?php if(isset($submitmessage)) { ?>
+            <div style="max-width: 65rem; text-align: center">
+                <h3 style="color: var(--colour-primary-shade)"><?=$submitmessage?></h3>
+                <a href="contact">Try Again</a>
+            </div>
+        <?php } else { ?>
             <div style="max-width: 65rem">
                 <h3>Form Submitted Successfully.</h3>
                 <?php if (!isset($_SESSION['id'])) { ?>
